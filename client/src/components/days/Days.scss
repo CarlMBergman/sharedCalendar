@@ -1,0 +1,8 @@
+.monthDays {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 2px;
+  background-color: black;
+  border-top: 2px solid black;
+  border-radius: 0 0 10px 10px;
+}

@@ -1,0 +1,22 @@
+.calendar {
+  width: 80vw;
+  border: 2px solid black;
+  margin-top: 1rem;
+  border-radius: 10px;
+}
+
+.month {
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  &__text {
+    font-size: 34px;
+  }
+}
+
+.weekDays {
+  display: grid;
+  place-items: center;
+  grid-template-columns: repeat(7, 1fr);
+}
