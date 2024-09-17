@@ -18,7 +18,6 @@ function Days(props) {
 
   for (let day = 0; day < 35; day++) {
     if (day === 0 && weekdayOfFirstDay === 0) {
-      console.log("kommer vi in här");
       firstDayOfMonth.setDate(firstDayOfMonth.getDate() - 6);
     } else if (day === 0) {
       firstDayOfMonth.setDate(
