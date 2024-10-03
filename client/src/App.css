@@ -3,4 +3,6 @@ main {
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 }

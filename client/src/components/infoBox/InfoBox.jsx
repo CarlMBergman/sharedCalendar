@@ -1,5 +1,6 @@
 import { useState } from "react";
 import "./InfoBox.scss";
+import save from "../../assets/save.svg";
 
 function InfoBox(props) {
   let day = props.day.day;
@@ -80,7 +81,7 @@ function InfoBox(props) {
 
   return (
     <div className={`infoBox ${week}`}>
-      <div>
+      <div className="infoBox__notes">
         <h3>
           {day.number}/{day.month}
         </h3>
@@ -92,7 +93,12 @@ function InfoBox(props) {
         ></textarea>
       </div>
       <div>
-        <button onClick={saveInfo}>Spara anteckningar</button>
+        <img
+          onClick={saveInfo}
+          className="save-btn"
+          src={save}
+          alt="Save button"
+        />
       </div>
     </div>
   );

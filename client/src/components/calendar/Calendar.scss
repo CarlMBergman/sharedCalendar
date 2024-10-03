@@ -20,6 +20,7 @@
 
 .background {
   background-image: url(../../assets/eyes.jpg);
+  border-radius: 8px 8px 0 0;
 }
 
 .weekDays {
@@ -27,6 +28,7 @@
   place-items: center;
   grid-template-columns: repeat(7, 1fr);
   cursor: default;
+  font-size: 16px;
 }
 
 .change-month {
