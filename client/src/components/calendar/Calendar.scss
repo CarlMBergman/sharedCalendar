@@ -3,6 +3,7 @@
   border: 2px solid black;
   margin-top: 1rem;
   border-radius: 10px;
+  background-color: transparent;
 }
 
 .month {
@@ -10,13 +11,66 @@
   display: flex;
   align-items: center;
   justify-content: space-around;
+  cursor: default;
+
   &__text {
     font-size: 34px;
   }
+}
+
+.background {
+  background-image: url(../../assets/eyes.jpg);
 }
 
 .weekDays {
   display: grid;
   place-items: center;
   grid-template-columns: repeat(7, 1fr);
+  cursor: default;
 }
+
+.change-month {
+  cursor: pointer;
+}
+
+.Oktober {
+}
+
+// .Oktober {
+//   position: relative;
+//   overflow: hidden;
+// }
+
+// .Oktober::before,
+// .Oktober::after {
+//   content: "";
+//   position: absolute;
+//   top: -10px;
+//   left: 50%;
+//   width: 15px;
+//   height: 15px;
+//   background-color: white;
+//   border-radius: 50%;
+//   opacity: 0.8;
+//   animation: fall linear infinite;
+//   z-index: 100;
+// }
+
+// .Oktober::before {
+//   animation-duration: 10s;
+//   transform: translateX(-50%) rotate(0deg);
+// }
+
+// .Oktober::after {
+//   animation-duration: 7s;
+//   transform: translateX(-50%) rotate(180deg);
+// }
+
+// @keyframes fall {
+//   0% {
+//     transform: translateY(0) translateX(ran) scale(1);
+//   }
+//   100% {
+//     transform: translateY(100vh) scale(0.3);
+//   }
+// }

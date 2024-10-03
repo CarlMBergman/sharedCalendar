@@ -21,7 +21,10 @@ function Day(props) {
 
   return (
     <>
-      <div className="day" onClick={() => props.toggleInfoBox(day1)}>
+      <div
+        className={`day current-month-${day1.day.currentMonth}`}
+        onClick={() => props.toggleInfoBox(day1)}
+      >
         <p className="day__number">{props.day.number}</p>
       </div>
     </>

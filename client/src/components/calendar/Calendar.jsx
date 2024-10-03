@@ -51,36 +51,42 @@ function Calendar() {
   function backOneMonth() {
     today.setMonth(today.getMonth() - 1);
     setToday(new Date(today));
-    console.log(today);
   }
 
   function forwardOneMonth() {
     today.setMonth(today.getMonth() + 1);
     setToday(new Date(today));
-    console.log(today);
   }
 
   return (
-    <div className="calendar">
-      <header className="month">
-        <p className="month__text" onClick={() => backOneMonth()}>
-          &lt;
-        </p>
-        <p className="month__text">
-          {month} {fullYear}
-        </p>
-        <p className="month__text" onClick={() => forwardOneMonth()}>
-          &gt;
-        </p>
-      </header>
-      <div className="weekDays">
-        <p>Måndag</p>
-        <p>Tisdag</p>
-        <p>Onsdag</p>
-        <p>Torsdag</p>
-        <p>Fredag</p>
-        <p>Lördag</p>
-        <p>Söndag</p>
+    <div className={`calendar ${month}`}>
+      <div className="background">
+        <header className="month">
+          <p
+            className="month__text change-month"
+            onClick={() => backOneMonth()}
+          >
+            &lt;
+          </p>
+          <p className="month__text ">
+            {month} {fullYear}
+          </p>
+          <p
+            className="month__text change-month"
+            onClick={() => forwardOneMonth()}
+          >
+            &gt;
+          </p>
+        </header>
+        <div className="weekDays">
+          <p>Måndag</p>
+          <p>Tisdag</p>
+          <p>Onsdag</p>
+          <p>Torsdag</p>
+          <p>Fredag</p>
+          <p>Lördag</p>
+          <p>Söndag</p>
+        </div>
       </div>
       <Days today={today} datesAndEvents={datesAndEvents} />
     </div>
