@@ -6,6 +6,7 @@ import { useState } from "react";
 function Days(props) {
   const [showInfoBox, setShowInfoBox] = useState(false);
   const [dayInInfoBox, setDayInInfoBox] = useState();
+
   const firstDayOfMonth = new Date(
     props.today.getFullYear(),
     props.today.getMonth(),
@@ -21,7 +22,7 @@ function Days(props) {
       firstDayOfMonth.setDate(firstDayOfMonth.getDate() - 6);
     } else if (day === 0) {
       firstDayOfMonth.setDate(
-        firstDayOfMonth.getDate() + (day - weekdayOfFirstDay)
+        firstDayOfMonth.getDate() + (day - weekdayOfFirstDay) + 1
       );
     } else {
       firstDayOfMonth.setDate(firstDayOfMonth.getDate() + 1);
@@ -36,8 +37,21 @@ function Days(props) {
       selected: firstDayOfMonth.toDateString() === props.today.toDateString(),
       year: firstDayOfMonth.getFullYear(),
       dayOnCalendar: day,
+      dayInWeek: firstDayOfMonth.getDay(),
     };
-    currentMonth.push(calendarDay);
+
+    if (calendarDay.currentMonth && day === 34 && calendarDay.dayInWeek === 0) {
+      day = 27;
+    }
+    if (
+      !calendarDay.currentMonth &&
+      calendarDay.dayInWeek === 1 &&
+      day === 28
+    ) {
+      day = 35;
+    } else {
+      currentMonth.push(calendarDay);
+    }
   }
 
   function toggleInfoBox(day1) {
@@ -54,8 +68,6 @@ function Days(props) {
         : null;
 
       if (matchingEvent) {
-        console.log(matchingEvent);
-
         return (
           <Day
             toggleInfoBox={(day1) => toggleInfoBox(day1)}

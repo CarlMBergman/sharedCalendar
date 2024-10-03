@@ -6,7 +6,6 @@ function Day(props) {
   let day1;
 
   if (props.notes) {
-    console.log(props.notes);
     day1 = {
       day: props.day || {},
       notes: props.notes || {},

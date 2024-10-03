@@ -3,8 +3,8 @@ import "./Calendar.scss";
 import Days from "../days/Days";
 
 function Calendar() {
-  const today = new Date(); // Exempel: Tue Sep 17 2024 09:16:37 GMT+0200 (centraleuropeisk sommartid)
-
+  // const today = new Date(); // Exempel: Tue Sep 17 2024 09:16:37 GMT+0200 (centraleuropeisk sommartid)
+  const [today, setToday] = useState(new Date());
   const [month, setMonth] = useState("Något är fel"); // nuvarande månad i sträng
   const [fullYear, setFullYear] = useState(); // 2024
   const [datesAndEvents, setDatesAndEvents] = useState(); // alla event i databasen
@@ -41,7 +41,6 @@ function Calendar() {
 
         const json = await response.json();
         setDatesAndEvents(json);
-        console.log(json);
       } catch (error) {
         console.error(error.message);
       }
@@ -49,11 +48,29 @@ function Calendar() {
     getDates();
   }, []);
 
+  function backOneMonth() {
+    today.setMonth(today.getMonth() - 1);
+    setToday(new Date(today));
+    console.log(today);
+  }
+
+  function forwardOneMonth() {
+    today.setMonth(today.getMonth() + 1);
+    setToday(new Date(today));
+    console.log(today);
+  }
+
   return (
     <div className="calendar">
       <header className="month">
+        <p className="month__text" onClick={() => backOneMonth()}>
+          &lt;
+        </p>
         <p className="month__text">
           {month} {fullYear}
+        </p>
+        <p className="month__text" onClick={() => forwardOneMonth()}>
+          &gt;
         </p>
       </header>
       <div className="weekDays">

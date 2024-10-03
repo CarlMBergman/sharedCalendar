@@ -68,7 +68,7 @@ function InfoBox(props) {
         }
 
         const result = await response.json();
-        setMessage("Date added successfully!");
+        // setMessage("Date added successfully!");
         //   setDate("");
         //   setEvent("");
       } catch (error) {
