@@ -26,6 +26,9 @@ function Day(props) {
         onClick={() => props.toggleInfoBox(day1)}
       >
         <p className="day__number">{props.day.number}</p>
+        {day1.notes.notes !== "Skriv något här..." ? (
+          <div className="red-dot"></div>
+        ) : null}
       </div>
     </>
   );

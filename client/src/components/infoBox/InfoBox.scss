@@ -15,6 +15,14 @@
   cursor: pointer;
 }
 
+.red-dot {
+  width: 10px;
+  height: 10px;
+  background-color: red;
+  border-radius: 100px;
+  margin: 3px;
+}
+
 .one {
   grid-area: 2 / 1 / 2 / 8;
 }
