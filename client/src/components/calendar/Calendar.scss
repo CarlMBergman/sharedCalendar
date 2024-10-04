@@ -8,9 +8,10 @@
 
 .month {
   height: 80px;
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
   align-items: center;
-  justify-content: space-around;
+  justify-items: center;
   cursor: default;
 
   &__text {
