@@ -78,6 +78,7 @@ function InfoBox(props) {
       }
     }
   }
+  console.log(week);
 
   return (
     <div className={`infoBox ${week}`}>
